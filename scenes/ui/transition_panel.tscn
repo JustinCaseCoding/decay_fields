@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bgsrnsnl6m3ys"]
+
+[ext_resource type="Script" uid="uid://d1sln7knw64mm" path="res://script/ui/transition_panel.gd" id="1_3y04s"]
+
+[node name="Polygon2D" type="Polygon2D" unique_id=2132525480]
+color = Color(0.16470589, 0.3764706, 0.6, 0.7019608)
+script = ExtResource("1_3y04s")
