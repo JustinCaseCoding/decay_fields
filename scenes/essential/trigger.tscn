@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://discakg7563ob"]
+
+[ext_resource type="Script" uid="uid://b8g8ht3whidwg" path="res://script/essential/trigger.gd" id="1_h3q01"]
+[ext_resource type="PackedScene" uid="uid://cj2pnwd8cohko" path="res://scenes/essential/dfintro.tscn" id="2_6pm4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx53q"]
+
+[node name="Trigger" type="Node2D" unique_id=826910082]
+script = ExtResource("1_h3q01")
+dfintro = ExtResource("2_6pm4r")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=513044924]
+z_index = 20
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2028604872]
+shape = SubResource("RectangleShape2D_lx53q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dafbnkgmjxy4j"]
+
+[ext_resource type="Script" uid="uid://ct2wh5qax7ng4" path="res://script/ui/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="PackedScene" uid="uid://bgsrnsnl6m3ys" path="res://scenes/ui/transition_panel.tscn" id="3_f6eus"]
+[ext_resource type="FontFile" uid="uid://cbblgj0y44tx6" path="res://assets/fonts/Silkscreen/Silkscreen-Bold.ttf" id="4_8uki6"]
+
+[node name="PauseMenu" type="Control" unique_id=448313180]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_emv3i")
+
+[node name="TransitionPanel" parent="." unique_id=2132525480 instance=ExtResource("3_f6eus")]
+
+[node name="MenuContent" type="Control" parent="." unique_id=487513803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="MenuContent" unique_id=1223854940]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 79.0
+offset_right = 365.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+theme_override_font_sizes/font_size = 32
+text = "DECAY FIELDS"
+
+[node name="continue" type="Label" parent="MenuContent" unique_id=1294328159]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 176.0
+offset_bottom = 279.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "CONTINUE"
+
+[node name="load" type="Label" parent="MenuContent" unique_id=2124527741]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 280.0
+offset_right = 182.0
+offset_bottom = 303.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "LOAD GAME"
+
+[node name="settings" type="Label" parent="MenuContent" unique_id=956930131]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 304.0
+offset_right = 167.0
+offset_bottom = 327.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "SETTINGS"
+
+[node name="save" type="Label" parent="MenuContent" unique_id=1180687810]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 328.0
+offset_right = 167.0
+offset_bottom = 351.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "SAVE"
+
+[node name="quit" type="Label" parent="MenuContent" unique_id=739536799]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 528.0
+offset_right = 123.0
+offset_bottom = 551.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "QUIT"
+
+[node name="quit_confirm" type="Control" parent="MenuContent" unique_id=1685685880]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="question" type="Label" parent="MenuContent/quit_confirm" unique_id=1371527084]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = 40.0
+offset_right = 261.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "WOULD YOU LIKE TO RETURN TO THE MAIN MENU?"
+horizontal_alignment = 1
+
+[node name="yes" type="Label" parent="MenuContent/quit_confirm" unique_id=387537297]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 92.0
+offset_right = -18.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "YES"
+
+[node name="no" type="Label" parent="MenuContent/quit_confirm" unique_id=1687585508]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 92.0
+offset_right = 90.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_8uki6")
+text = "NO"

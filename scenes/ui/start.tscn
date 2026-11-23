@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://drmrayqpc02hp"]
+
+[ext_resource type="Script" uid="uid://df4evypamom1v" path="res://script/ui/start.gd" id="1_3bxa3"]
+[ext_resource type="Script" uid="uid://d1sln7knw64mm" path="res://script/ui/transition_panel.gd" id="3_6o3pa"]
+[ext_resource type="FontFile" uid="uid://cbblgj0y44tx6" path="res://assets/fonts/Silkscreen/Silkscreen-Bold.ttf" id="4_ga4bg"]
+[ext_resource type="Texture2D" uid="uid://c3wp701kxtvt2" path="res://assets/sprites/essential/dfstartback.png" id="9_062xv"]
+
+[node name="Start" type="Control" unique_id=224544571]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3bxa3")
+house_path = "res://scenes/world/maps/map_house_start.res"
+
+[node name="background" type="TextureRect" parent="." unique_id=37705045]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("9_062xv")
+
+[node name="TransitionPanel" type="Polygon2D" parent="." unique_id=522495539]
+color = Color(0.24883506, 0.51734555, 0.90030324, 0.8901961)
+script = ExtResource("3_6o3pa")
+
+[node name="title" type="Label" parent="TransitionPanel" unique_id=300237858]
+offset_left = 65.0
+offset_top = 79.0
+offset_right = 214.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+theme_override_font_sizes/font_size = 32
+text = "DECAY FIELDS"
+
+[node name="continue" type="Label" parent="TransitionPanel" unique_id=904650624]
+offset_left = 64.0
+offset_top = 232.0
+offset_right = 176.0
+offset_bottom = 255.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "CONTINUE"
+
+[node name="new_game" type="Label" parent="TransitionPanel" unique_id=1582003696]
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 172.0
+offset_bottom = 277.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "NEW GAME"
+
+[node name="load" type="Label" parent="TransitionPanel" unique_id=948000339]
+offset_left = 64.0
+offset_top = 280.0
+offset_right = 182.0
+offset_bottom = 303.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "LOAD GAME"
+
+[node name="settings" type="Label" parent="TransitionPanel" unique_id=2021336221]
+offset_left = 64.0
+offset_top = 304.0
+offset_right = 167.0
+offset_bottom = 327.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "SETTINGS"
+
+[node name="credits" type="Label" parent="TransitionPanel" unique_id=869988497]
+offset_left = 64.0
+offset_top = 328.0
+offset_right = 153.0
+offset_bottom = 351.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "CREDITS"
+
+[node name="quit" type="Label" parent="TransitionPanel" unique_id=387367733]
+offset_left = 72.0
+offset_top = 528.0
+offset_right = 123.0
+offset_bottom = 551.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "QUIT"
+
+[node name="quit_confirm" type="Control" parent="." unique_id=1797388401]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="question" type="Label" parent="quit_confirm" unique_id=940995833]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -40.0
+offset_right = 180.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "DO YOU WANT TO QUIT THE GAME?"
+horizontal_alignment = 1
+
+[node name="yes" type="Label" parent="quit_confirm" unique_id=2024449089]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 12.0
+offset_right = -28.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "YES"
+
+[node name="no" type="Label" parent="quit_confirm" unique_id=1121984342]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 12.0
+offset_right = 70.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ga4bg")
+text = "NO"
+
+[connection signal="gui_input" from="TransitionPanel/continue" to="." method="_on_continue_clicked"]
+[connection signal="gui_input" from="TransitionPanel/new_game" to="." method="_on_new_game_clicked"]
+[connection signal="gui_input" from="TransitionPanel/quit" to="." method="_on_quit_clicked"]
+[connection signal="gui_input" from="quit_confirm/yes" to="." method="_on_quit_confirmed"]
+[connection signal="gui_input" from="quit_confirm/no" to="." method="_on_quit_denied"]

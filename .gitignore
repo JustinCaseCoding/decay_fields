@@ -1,0 +1,19 @@
+.godot/
+.import/
+*.import
+export_presets.cfg
+*.uid
+*.html
+*.js
+*.wasm
+*.pck
+*.apk
+*.aar
+.mono/
+data_mono/
+mono_crash*.log
+/android
+/build
+# working copy only, moves into the fresh repo on the honest restart
+HISTORY.md
+

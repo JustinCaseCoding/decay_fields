@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c5laq2ns3o04k"]
+
+[ext_resource type="Script" uid="uid://b53y1hpmlg1ov" path="res://script/player/player.gd" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://h454h7wgdwds" path="res://assets/sprites/characters/player_spritesheet_new.png" id="3_e41v5"]
+[ext_resource type="AudioStream" uid="uid://q7e8xc88vng4" path="res://assets/audio/sfx/grass_steps_001.mp3" id="3_mxepk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxepk"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e41v5"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca0mu"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6upyo"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxarj"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k3cy"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd672"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3oqc"]
+atlas = ExtResource("3_e41v5")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxepk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e41v5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca0mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6upyo")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxarj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k3cy")
+}],
+"loop": 1,
+"name": &"run_b",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd672")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3oqc")
+}],
+"loop": 1,
+"name": &"run_f",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxepk"]
+size = Vector2(20, 7)
+
+[node name="Player" type="CharacterBody2D" unique_id=2134270175]
+z_index = 10
+collision_layer = 2
+script = ExtResource("1_v0iea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=131469810]
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.13405955
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113325905]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_mxepk")
+
+[node name="tap" type="AudioStreamPlayer2D" parent="." unique_id=1297857978]
+stream = ExtResource("3_mxepk")
+bus = &"SFX"
+
+[node name="tap_timer" type="Timer" parent="." unique_id=1951771502]
+wait_time = 0.3
+
+[connection signal="timeout" from="tap_timer" to="." method="_on_tap_timer_timeout"]

@@ -1,0 +1,3 @@
+# Normalize EOL for all files that Git considers text files.
+# Prevents CRLF/LF chaos between Windows and Linux machines.
+* text=auto eol=lf
